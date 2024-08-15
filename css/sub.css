@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+main {max-width: 100%; margin-top: 0;}
+.about_main {
+    height: 380px;
+    background: url(../img/header-about3-2.jpg) no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about_main h2 {
+    font-weight: 600;
+    font-size: 60px;
+    color: #fff;
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+main article {
+    max-width: 1100px;
+    margin: 0 auto 150px;
+}
+article h3 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #000
+}
+article .text {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+article img {
+    width: 100%;
+}
+.local_point {
+    display: flex;
+    justify-content: space-between;
+}
+.local_point .about_text {
+    width: 45%
+}
+.local_point img {
+    width: 45%
+}

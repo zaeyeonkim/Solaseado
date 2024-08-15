@@ -1,0 +1,211 @@
+@charset "utf-8";
+@import url(fonts.css);
+
+/* 공통요소 */
+body {font-weight: 400;}
+section {padding: 100px 0 50px}
+section h2 {
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #111;
+    margin-bottom: 40px;
+    color: #000;
+    font-size: 28px;
+    font-weight: 500;
+}
+section .text {font-size: 18px;}
+
+
+/* 배경 비디오 */
+#bg_movie {
+    height: 100vh;
+    overflow: hidden;
+}
+#bg_movie video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* header */
+header {
+    position: absolute;
+    top: 0; left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 15px 5%; 
+    box-sizing: border-box;  /* width/height -> padding+border는 width/height 크기가 더해지므로 box-sizing을 선언해야 함. */
+    transition: all 0.4s;
+    z-index: 2;    
+}
+header .logo > a {
+    display: block;
+    width: 200px; height: 46px;
+    background: url(../img/logo-full-white.png) no-repeat;
+    transition: all 0.3s;
+}
+header .gnb > a {
+    display: inline-block;
+    padding: 6px;
+    margin: 0 15px;
+    font-weight: 500;
+    color: #fff;
+}
+header .gnb > a.lab {
+    background: #0098db;
+    padding: 4px 8px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: all 0.3s
+}
+header:hover {
+    background: #f7f7f7; 
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+header:hover .logo > a {
+    background-image: url(../img/loco.png);
+}
+header:hover .gnb > a {color: #0098db;}
+header:hover .gnb > a.lab {
+    background: transparent;
+    border-color: #0098db;
+}
+
+/* main */
+main {
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+/* main - about */
+#about {
+    display: flex;
+    justify-content: space-between;    
+    align-items: center;
+}
+#about .about_text {
+    width: 45%;
+    letter-spacing: -1px;
+    line-height: 1.8;
+    word-break: keep-all; /* 줄바꿈이 될 때 단어가 끊어지지 않고 단어별로 줄바꿈이 되는 속성 */
+}
+#about figure {width: 40%;}
+#about figure > img {width: 100%;}
+#about .sub_about {margin-top: 40px;}
+#about .sub_about > h3 {display: inline-block}
+#about .sub_about h3 a {
+    display: block;
+    padding: 5px 15px;
+    background: #0e4998;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+#about .sub_about h3:hover > a {
+    background: #0b2c58; 
+}
+
+/* why */
+#why .why_list {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+#why .why_list li {
+    width: 240px; 
+    transition: all 0.5s;
+}
+#why .why_list li:nth-child(2) {margin-top: -70px;}
+#why .why_list li:nth-child(3) {margin-top: 10px;}
+#why .why_list li:nth-child(4) {margin-top: -40px;}
+
+#why .why_list li:hover {
+    transform: translateY(30px);
+}
+#why .why_list figure {
+    overflow: hidden;
+    height: 250px;
+    margin-bottom: 25px;
+    background: no-repeat center/cover;
+}
+#why .why_list figure.bg1 {
+    background-image: url(../img/main-why01.png);
+}
+#why .why_list figure.bg2 {
+    background-image: url(../img/main-why02.png);   
+    height: 290px;
+}
+#why .why_list figure.bg3 {
+    background-image: url(../img/main-why03.png);   
+    height: 220px;
+}
+#why .why_list figure.bg4 {
+    background-image: url(../img/main-why04.png);   
+    height: 320px;
+}
+#why .why_list li h3 {
+    position: relative;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 15px;
+}
+#why .why_list li h3:after {
+    content: '';
+    position: absolute;
+    top: -3px; right: 0;
+    width: 24px; height: 24px;
+    background: url(../img/ico_right.png) no-repeat center;
+    transition: all 0.3s;
+    z-index: 2;
+}
+#why .why_list li:hover h3:after {
+    transform: translateX(10px);
+}
+#why .why_list li .text {word-break: keep-all;}
+
+/* trip */
+#trip .trip_list {
+    display: flex;
+    justify-content: space-between;    
+    margin-top: 50px;
+}
+#trip .trip_list li {
+    position: relative;
+    width: 240px;  
+    transition: all 0.3s;   
+}
+#trip .trip_list li:hover {
+    transform: translateY(-30px);
+}
+#trip .trip_list li figure {
+    width: 160px; height: 160px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background: no-repeat center/cover;
+}
+#trip .trip_list li:hover figure {filter: grayscale(0);}
+#trip .trip_list li figure.trip1 {background-image: url(../img/img_trip01.jpg);}
+#trip .trip_list li figure.trip2 {background-image: url(../img/img_trip02.jpg);}
+#trip .trip_list li figure.trip3 {background-image: url(../img/img_trip03.jpg);}
+#trip .trip_list li figure.trip4 {background-image: url(../img/img_trip04.jpg);}
+#trip .trip_list li figure.trip5 {background-image: url(../img/img_trip05.jpg);}
+#trip .trip_list li h3 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+
+/* footer */
+footer {
+    border-top: 8px solid rgba(0,0,0,0.2);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    font-size: 15px;
+}
